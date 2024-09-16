@@ -2,17 +2,12 @@ package org.example;
 
 
 import lombok.*;
-@Builder
-@ToString
-@Setter
-@Getter
-@AllArgsConstructor
-@EqualsAndHashCode
-@With
+
+@Value
 public class Course {
     int id;
     String name;
     Teacher teacher;
     Student student;
-
+    int grades;
 }

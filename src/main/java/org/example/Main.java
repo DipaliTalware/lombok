@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
         Teacher teacher = new Teacher(1, "John", "JAVA");
         Student student = new Student(2, "Jane", "Berlin", "10th A");
-        Course course = new Course(1, "JAVA", teacher, student);
+        Course course = new Course(1, "JAVA", teacher, student, 66);
 
         System.out.println(course);
         System.out.println(student.getAddress());
@@ -37,6 +37,13 @@ public class Main {
         Student student2Update = student2.withName("Sherlock Holmes");
         System.out.println("Original Student 2: " + student2);
         System.out.println("Updated Student 2: " + student2Update);
+
+        Course course2 = new Course(33, "EE", teacher, student3, 45);
+        University uni = new University(01, "KIT", course2, 70);
+
+        UniversityService service = new UniversityService();
+        System.out.println("The student grades : " + service.calculateGrades(course2));
+        System.out.println("The avg uni grades are : " + service.CalculateAvgUniversityGrades(uni));
 
     }
 }
